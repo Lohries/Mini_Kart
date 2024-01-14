@@ -1,6 +1,3 @@
-
-
-
 void setup() {
   pinMode(2, OUTPUT);
   pinMode(8, INPUT);
@@ -39,6 +36,14 @@ void loop() {
   delay(100);
 }
 
+void freio() {
+  digitalWrite(5, HIGH);
+  digitalWrite(3, HIGH);
+  
+  digitalWrite(9, HIGH);
+  digtalWrite(10, HIGH);
+   
+}
 
 
 float calculateDistance(int triggerPin, int echoPin) {
