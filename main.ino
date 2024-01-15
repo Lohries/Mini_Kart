@@ -1,3 +1,6 @@
+
+
+
 void setup() {
   pinMode(2, OUTPUT);
   pinMode(8, INPUT);
@@ -36,14 +39,6 @@ void loop() {
   delay(100);
 }
 
-void freio() {
-  digitalWrite(5, HIGH);
-  digitalWrite(3, HIGH);
-  
-  digitalWrite(9, HIGH);
-  digtalWrite(10, HIGH);
-   
-}
 
 
 float calculateDistance(int triggerPin, int echoPin) {
@@ -55,3 +50,30 @@ float calculateDistance(int triggerPin, int echoPin) {
   float Dist = pulseIn(echoPin, HIGH) / 58.2;;
   return Dist;
 }
+
+void freio() {
+  digitalWrite(5, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(9, HIGH);
+  digtalWrite(10, LOW);
+  delay(1500);
+
+}
+void frente() {
+  digitalWrite(5, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(9, HIGH);
+  digtalWrite(10, HIGH);
+  delay(1500);
+
+}
+
+void ré() {
+  digitalWrite(5, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(9, LOW);
+  digtalWrite(10, HIGH);
+  delay(1500);
+
+  
+ }
