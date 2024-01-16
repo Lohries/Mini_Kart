@@ -1,6 +1,4 @@
 
-
-
 void setup() {
   pinMode(2, OUTPUT);
   pinMode(8, INPUT);
@@ -12,26 +10,26 @@ void setup() {
 }
 
 void loop() {
-  distancia1 = calculateDistance(2, 8);
-  distancia2 = calculateDistance(4, 12);
-  distancia3 = calculateDistance(7, 13);
+  float distancia1 = calculateDistance(2, 8);
+  float distancia2 = calculateDistance(4, 12);
+  float distancia3 = calculateDistance(7, 13);
 
  
-  if (distancia1 <= 30) {
-    //Ré
-    //Direita
+  if (distancia1 <= 50) {
+    re();
+    direita();//Direita
     
     
   }
 
-  if (distancia2 <= 30) {
-    //Ré
+  if (distancia2 <= 50) {
+    re();//Ré
     //Direita
     
   }
-  if (distancia3 <= 30) {
-    //Ré
-    //Esquerda
+  if (distancia3 <= 50) {
+    re();//Ré
+    esquerda()//Esquerda
     
   }
 
@@ -52,10 +50,11 @@ float calculateDistance(int triggerPin, int echoPin) {
 }
 
 void freio() {
-  digitalWrite(5, HIGH);
+  digitalWrite(5, HIGH);  //Direita
   digitalWrite(3, LOW);
-  digitalWrite(9, HIGH);
-  digtalWrite(10, LOW);
+  
+  digitalWrite(9, HIGH); //Esquerda
+  digitalWrite(10, LOW);
   delay(1500);
 
 }
@@ -63,17 +62,33 @@ void frente() {
   digitalWrite(5, HIGH);
   digitalWrite(3, HIGH);
   digitalWrite(9, HIGH);
-  digtalWrite(10, HIGH);
+  digitalWrite(10, HIGH);
   delay(1500);
 
 }
 
-void ré() {
+void re() {
   digitalWrite(5, LOW);
   digitalWrite(3, HIGH);
   digitalWrite(9, LOW);
-  digtalWrite(10, HIGH);
+  digitalWrite(10, HIGH);
   delay(1500);
 
   
  }
+void direita () {
+  digitalWrite(9, HIGH); //Esquerda
+  digitalWrite(10, LOW);  
+
+  digitalWrite(5, LOW);  //Direita
+  digitalWrite(3, HIGH);
+
+}
+void esquerda () {
+  digitalWrite(9, LOW); //Esquerda
+  digitalWrite(10, HIGH);  
+
+  digitalWrite(5, HIGH);  //Direita
+  digitalWrite(3, LOW);
+  
+}
