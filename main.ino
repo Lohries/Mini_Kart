@@ -6,11 +6,11 @@ void setup() {
   pinMode(7, OUTPUT);
   pinMode(13, INPUT);
 
-  // Pinos ligados em IN3 e IN4,
-  pinMode(3, OUTPUT); // Configurando Pino 3 como saída de dados
-  pinMode(4, OUTPUT); // Configurando Pino 4 como saída de dados
-  pinMode(5, OUTPUT); // Configurando Pino 5 como saída de dados
-  pinMode(6, OUTPUT); // Configurando Pino 6 como saída de dados
+  
+  pinMode(3, OUTPUT); 
+  pinMode(4, OUTPUT); 
+  pinMode(5, OUTPUT); 
+  pinMode(6, OUTPUT); 
 
   Serial.begin(9600);
 }
@@ -22,7 +22,7 @@ void loop() {
 
   if (distancia1 <= 50) {
     re();  //Funciona
-    //direita(); 
+    esquerda();
   }
 
   if (distancia2 <= 50) {
@@ -32,7 +32,7 @@ void loop() {
 
   if (distancia3 <= 50) {
     re(); // Ré
-    esquerda(); // Esquerda
+    direita(); 
   }
   frente();
 
