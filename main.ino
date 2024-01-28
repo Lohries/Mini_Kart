@@ -1,9 +1,9 @@
 void setup() {
-  pinMode(2, OUTPUT);
-  pinMode(8, INPUT);
-  pinMode(4, OUTPUT);
-  pinMode(12, INPUT);
-  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, INPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, INPUT);
+  pinMode(12, OUTPUT);
   pinMode(13, INPUT);
 
   
@@ -16,25 +16,29 @@ void setup() {
 }
 
 void loop() {
-  float distancia1 = calculateDistance(2, 8);
-  float distancia2 = calculateDistance(4, 12);
-  float distancia3 = calculateDistance(7, 13);
+  float distancia1 = calculateDistance(10, 11);
+  float distancia2 = calculateDistance(8, 9);
+  float distancia3 = calculateDistance(13, 12);
 
   if (distancia1 <= 50) {
-    re();  //Funciona
+    re();
     esquerda();
+    
   }
 
   if (distancia2 <= 50) {
-    re(); // Funciona
-    // Direita
+    re();
+    
+    
   }
 
   if (distancia3 <= 50) {
-    re(); // Ré
-    direita(); 
+    re();
+    direita()
+    
+    
   }
-  frente();
+
 
 
 
@@ -56,35 +60,48 @@ float calculateDistance(int triggerPin, int echoPin) {
 
 
 void frente() {
+  digitalWrite(4, LOW);
+  digitalWrite(7, LOW);
   digitalWrite(5, HIGH);
   digitalWrite(3, LOW);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(2, HIGH);
   Serial.println("Frente");
   delay(1500);
 }
 
 void re() {
+  digitalWrite(4, LOW);
+  digitalWrite(7, HIGH);
   digitalWrite(5, LOW);
-  digitalWrite(3, HIGH);
-  digitalWrite(9, LOW);
-  digitalWrite(10, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(6, HIGH);
+  digitalWrite(2, LOW);
   Serial.println("Ré");
   delay(1500);
 }
 
-void direita() {
-  digitalWrite(9, HIGH); // Esquerda
-  digitalWrite(10, LOW);
-  digitalWrite(5, LOW);  // Direita
-  digitalWrite(3, HIGH);
-  Serial.println("Direita");
+void esquerda() {
+  digitalWrite(3, LOW); //Permitir direita
+  digitalWrite(6, LOW); //Atras
+  digitalWrite(2, HIGH); //Frente
+  digitalWrite(4, HIGH); //Permitir esquerda
+  digitalWrite(7, HIGH); //Atras
+  digitalWrite(5, HIGH); //Frebte
+  
+  Serial.println("Esquerda");
   delay(1000);
 }
 
-void esquerda() {
-  digitalWrite(9, LOW); // Esquerda
-  digitalWrite(10, HIGH);
-  digitalWrite(5, HIGH);  // Direita
-  digitalWrite(3, LOW);
+void direita() {
+  digitalWrite(3, HIGH); //Permitir direita
+  digitalWrite(6, HIGH);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, LOW); //Permitir esquerda
+  digitalWrite(7, LOW);
+  digitalWrite(5, HIGH);
+  
+  Serial.println("Direita");
+  delay(1000);
+  
 }
