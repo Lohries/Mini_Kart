@@ -34,15 +34,12 @@ void loop() {
 
   if (distancia3 <= 50) {
     re();
-    direita()
+    direita();
     
     
   }
+  frente();
 
-
-
-
-  // Repeat the above motor control logic as needed based on your application
 
   delay(100);
 }
