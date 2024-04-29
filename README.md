@@ -18,7 +18,7 @@ O Mini Kart é um carrinho autônomo equipado com dois motores que controlam sua
 2. Carregue o programa de controle no Arduino UNO.
 3. Ligue o carrinho e observe sua capacidade de navegar autonomamente, evitando obstáculos em seu caminho.
 
-##En
+## En
 
 # Mini Kart
 
