@@ -1,0 +1,11 @@
+﻿Name,Quantity,Component
+"U1",1," Arduino Uno R3"
+"U4, U5",2," IR sensor"
+"U2",1,"MCP23008-based, 32 (0x20) LCD 16 x 2 (I2C)"
+"GAS1",1," Gas Sensor"
+"R1",1,"500 Ω Resistor"
+"M1, M2, M3",3," DC Motor"
+"U3",1," Temperature Sensor [TMP36]"
+"U6",1," H-bridge Motor Driver"
+"BAT2, BAT1",2," 9V Battery"
+"PING1, PING2, PING3",3," Ultrasonic Distance Sensor"
